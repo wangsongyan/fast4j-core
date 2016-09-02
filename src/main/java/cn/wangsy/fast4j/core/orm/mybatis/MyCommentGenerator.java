@@ -1,8 +1,5 @@
 package cn.wangsy.fast4j.core.orm.mybatis;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.dom.java.CompilationUnit;
@@ -13,13 +10,11 @@ public class MyCommentGenerator extends DefaultCommentGenerator {
 
 	@Override
 	public void addJavaFileComment(CompilationUnit compilationUnit) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		compilationUnit.addFileCommentLine("/*");
 		compilationUnit.addFileCommentLine(" * " + compilationUnit.getType().getShortName() + ".java");
 		compilationUnit.addFileCommentLine(" * Copyright(C) 2011-2016");
 		compilationUnit.addFileCommentLine(" * All rights reserved.");
 		compilationUnit.addFileCommentLine(" * --------------------------------");
-		//compilationUnit.addFileCommentLine(" * " + sdf.format(new Date()));
 		compilationUnit.addFileCommentLine(" */");
 	}
 
