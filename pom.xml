@@ -152,7 +152,13 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/lib/shiro-freemarker-tags-0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
-
+		
+		<dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+		
 	</dependencies>
 
 </project>
