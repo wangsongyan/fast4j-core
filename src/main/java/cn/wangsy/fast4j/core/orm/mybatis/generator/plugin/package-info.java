@@ -1,5 +1,5 @@
 /**
- * mybatis逆向工程分页插件
+ * mybatis逆向工程插件
  * @author songy
  *
  */
