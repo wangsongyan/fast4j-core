@@ -18,8 +18,6 @@ public class Pager implements Serializable{
 
 	private int pageIndex;
 	private int pageSize;
-	private int pageStart;
-	private int pageEnd;
 	
 	public Pager(int pageIndex,int pageSize){
 		this.pageIndex = pageIndex;
@@ -46,22 +44,12 @@ public class Pager implements Serializable{
 		this.pageSize = pageSize < 1 ? 1 : pageSize;
 	}
 
-	public int getPageStart() {
-		pageStart = (pageIndex - 1) * pageSize;
-		return pageStart;
-	}
-
-	public void setPageStart(int pageStart) {
-		this.pageStart = pageStart;
+	public int getPageBegin() {
+		return (pageIndex - 1) * pageSize;
 	}
 
 	public int getPageEnd() {
-		pageEnd = pageIndex * pageSize;
-		return pageEnd;
-	}
-
-	public void setPageEnd(int pageEnd) {
-		this.pageEnd = pageEnd;
+		return pageIndex * pageSize;
 	}
 	
 }
