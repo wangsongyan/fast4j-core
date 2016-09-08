@@ -1,4 +1,4 @@
-package cn.wangsy.fast4j.core.spring;
+package cn.wangsy.fast4j.core.quartz;
 
 import org.quartz.spi.TriggerFiredBundle;
 import org.springframework.beans.factory.annotation.Autowired;
