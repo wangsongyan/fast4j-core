@@ -1,4 +1,4 @@
-package cn.wangsy.fast4j.core.oauth2;
+package cn.wangsy.fast4j.core.oauth2.api;
 
 import org.scribe.builder.api.DefaultApi20;
 import org.scribe.model.OAuthConfig;
