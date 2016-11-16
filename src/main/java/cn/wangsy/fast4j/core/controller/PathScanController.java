@@ -1,4 +1,4 @@
-package cn.wangsy.fast4j.core;
+package cn.wangsy.fast4j.core.controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.condition.RequestMethodsRequestCondit
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+import cn.wangsy.fast4j.core.entity.RequestToMethodItem;
 import cn.wangsy.fast4j.util.SetUtils;
 
 /** 
@@ -26,7 +27,7 @@ import cn.wangsy.fast4j.util.SetUtils;
  */
 @Controller
 @RequestMapping("/test")
-public class PathScan {
+public class PathScanController {
 
 	@Resource
 	private RequestMappingHandlerMapping requestMappingHandlerMapping;

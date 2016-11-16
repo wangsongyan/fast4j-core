@@ -1,4 +1,4 @@
-package cn.wangsy.fast4j.core;
+package cn.wangsy.fast4j.core.entity;
 
 /**
  * 说明：
