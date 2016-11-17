@@ -27,7 +27,7 @@ public class FreemarkerTemplateProcessService implements TemplateProcessService{
 
 	private static final String TEMPLATE_NAME = "template-name";
 	private FreeMarkerConfigurer freeMarkerConfigurer;
-	
+
 	public String process(String templateName, Map<String, Object> data) {
 		Configuration configuration = freeMarkerConfigurer.getConfiguration();
 		try {
@@ -59,6 +59,10 @@ public class FreemarkerTemplateProcessService implements TemplateProcessService{
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public void setFreeMarkerConfigurer(FreeMarkerConfigurer freeMarkerConfigurer) {
+		this.freeMarkerConfigurer = freeMarkerConfigurer;
 	}
 	
 	/*public static void main(String[]args){

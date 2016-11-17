@@ -41,6 +41,10 @@ public class BeetlTemplateProcessService implements TemplateProcessService{
 		return null;
 	}
 
+	public void setGroupTemplate(GroupTemplate groupTemplate) {
+		this.groupTemplate = groupTemplate;
+	}
+	
 	/*public static void main(String[]args){
 		TemplateProcessService service = new BeetlTemplateProcessService();
 		Map<String, Object> rootMap = new HashMap<String, Object>();

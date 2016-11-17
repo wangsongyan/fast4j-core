@@ -20,7 +20,7 @@ import cn.wangsy.fast4j.core.template.TemplateProcessService;
 public class VelocityTemplateProcessService implements TemplateProcessService{
 
 	private VelocityEngine velocityEngine;
-	
+
 	public String process(String templateName, Map<String, Object> data) {
 		Template template = velocityEngine.getTemplate(templateName);
 		VelocityContext context = new VelocityContext(data);
@@ -36,6 +36,10 @@ public class VelocityTemplateProcessService implements TemplateProcessService{
 		StringWriter writer = new StringWriter();
 		velocityEngine.evaluate(context, writer, "", templateSource); // 关键方法
 		return writer.toString();
+	}
+	
+	public void setVelocityEngine(VelocityEngine velocityEngine) {
+		this.velocityEngine = velocityEngine;
 	}
 
 	/*public static void main(String[]args){
