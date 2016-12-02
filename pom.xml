@@ -195,6 +195,13 @@
 			<version>3.9</version>
 		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/com.googlecode.rapid-framework/rapid-core -->
+		<dependency>
+		    <groupId>com.googlecode.rapid-framework</groupId>
+		    <artifactId>rapid-core</artifactId>
+		    <version>4.0.5</version>
+		</dependency>
+		
 	</dependencies>
 
 </project>
