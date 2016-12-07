@@ -58,6 +58,7 @@ public class MailService {
 	    helper.setTo(to);
 	    helper.setSubject(subject);
 	    helper.setText(text, html);
+	    mailSender.send(msg);
 	}
 	
 }
