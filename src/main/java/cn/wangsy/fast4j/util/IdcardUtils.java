@@ -531,7 +531,9 @@ public class IdcardUtils extends StringUtils {
     	if(StringUtils.isNotBlank(str)){
     		try {
 				Date date = new SimpleDateFormat("yyyyMMdd").parse(str);
-				if(valiDate(date.getYear()+1900,date.getMonth()+1,date.getDate())){
+				Calendar calendar = Calendar.getInstance();
+				calendar.setTime(date);
+				if(valiDate(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH)+1,calendar.get(Calendar.DATE))){
 					return date;
 				}
 			} catch (ParseException e) {
