@@ -4,10 +4,10 @@ import cn.wangsy.fast4j.core.annotation.ExcelField;
 
 public class ExportEx extends Export{
 
-	@ExcelField(columnName = "性别")
+	@ExcelField(columnName = "性别",sort = 2)
 	private String gender;
 	
-	@ExcelField(columnName = "民族")
+	@ExcelField(columnName = "民族",sort = 3)
 	private String nation;
 	
 	public String getGender() {

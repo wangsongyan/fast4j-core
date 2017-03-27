@@ -33,6 +33,6 @@ public @interface ExcelField {
 	 * 列宽
 	 * @return
 	 */
-	public float width() default 200;
+	public short width() default 150;
 
 }
