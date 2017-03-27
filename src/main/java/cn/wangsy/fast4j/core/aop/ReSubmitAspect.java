@@ -9,7 +9,6 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
 
 import cn.wangsy.fast4j.core.annotation.Token;
 import cn.wangsy.fast4j.core.annotation.TokenValid;
@@ -20,7 +19,7 @@ import cn.wangsy.fast4j.core.annotation.TokenValid;
  * @date 创建时间：2016年8月12日 下午12:28:47
  */
 @Aspect
-@Component
+//@Component
 public class ReSubmitAspect {
 	
 	private static final String TOKEN = "token";

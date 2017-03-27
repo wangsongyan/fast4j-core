@@ -3,7 +3,6 @@ package cn.wangsy.fast4j.core.aop;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
 
 import cn.wangsy.fast4j.core.annotation.DataSource;
 import cn.wangsy.fast4j.core.datasource.DataSourceContextHolder;
@@ -14,7 +13,7 @@ import cn.wangsy.fast4j.core.datasource.DataSourceContextHolder;
  * @date 创建时间：2016年8月28日 下午3:55:41
  */
 @Aspect
-@Component
+//@Component
 public class DynamicDataSourceAspect {
 
 	@Around("@annotation(dataSource)") //可以直接捕获下面这个方法中参数所设定的注解类型
