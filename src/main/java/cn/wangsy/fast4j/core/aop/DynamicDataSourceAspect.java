@@ -8,7 +8,7 @@ import cn.wangsy.fast4j.core.annotation.DataSource;
 import cn.wangsy.fast4j.core.datasource.DataSourceContextHolder;
 
 /** 
- * 说明：
+ * 说明：<p>&lt;bean class="cn.wangsy.fast4j.core.aop.DynamicDataSourceAspect">&lt;/bean></p>
  * @author wangsy
  * @date 创建时间：2016年8月28日 下午3:55:41
  */

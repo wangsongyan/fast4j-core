@@ -14,7 +14,7 @@ import cn.wangsy.fast4j.core.annotation.Token;
 import cn.wangsy.fast4j.core.annotation.TokenValid;
 
 /** 
- * 说明：
+ * 说明：<p>&lt;bean class="cn.wangsy.fast4j.core.aop.ReSubmitAspect">&lt;/bean></p>
  * @author wangsy
  * @date 创建时间：2016年8月12日 下午12:28:47
  */
