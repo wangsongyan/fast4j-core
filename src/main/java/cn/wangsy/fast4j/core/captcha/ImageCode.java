@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cn.wangsy.fast4j.core.security;
+package cn.wangsy.fast4j.core.captcha;
 
 import java.awt.Color;
 import java.awt.Font;

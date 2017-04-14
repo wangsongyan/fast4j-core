@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import cn.wangsy.fast4j.core.security.ImageCode;
+import cn.wangsy.fast4j.core.captcha.ImageCode;
 
 /**
  * @author wangsy
