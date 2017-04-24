@@ -2,10 +2,12 @@ package cn.wangsy.fast4j.core.controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -63,6 +65,36 @@ public class PathScanController {
         Collections.sort(requestToMethodItemList);
         model.addAttribute("MethodList", requestToMethodItemList);
 		return "/api";
+	}
+	
+	@RequestMapping("/requestmappingdetail.do")
+	public void requestmappingdetail(HttpServletResponse response) throws Exception{
+		List<HashMap<String, String>> urlList = new ArrayList<HashMap<String, String>>();
+		Map<RequestMappingInfo, HandlerMethod> map = requestMappingHandlerMapping.getHandlerMethods();
+		for (Map.Entry<RequestMappingInfo, HandlerMethod> m : map.entrySet()) {
+			HashMap<String, String> hashMap = new HashMap<String, String>();
+			RequestMappingInfo info = m.getKey();
+			HandlerMethod method = m.getValue();
+			PatternsRequestCondition p = info.getPatternsCondition();
+			for (String url : p.getPatterns()) {
+				hashMap.put("url", url);
+			}
+			hashMap.put("className", method.getMethod().getDeclaringClass().getName()); // 类名
+			hashMap.put("method", method.getMethod().getName()); // 方法名
+			RequestMethodsRequestCondition methodsCondition = info.getMethodsCondition();
+			String type = methodsCondition.toString();
+			if (type != null && type.startsWith("[") && type.endsWith("]")) {
+				type = type.substring(1, type.length() - 1);
+				hashMap.put("type", type); // 方法名
+			}
+			urlList.add(hashMap);
+		}
+		StringBuffer buffer=new StringBuffer();
+		for (HashMap<String, String> hashMap : urlList) {
+			buffer.append("//----"+hashMap.get("url")+"\n");
+			buffer.append(hashMap.get("className")+"."+hashMap.get("method")+"()"+"\n\n");
+		}
+		response.getWriter().write(buffer.toString());
 	}
 	
 }
