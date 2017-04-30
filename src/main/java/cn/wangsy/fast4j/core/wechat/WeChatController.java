@@ -88,6 +88,15 @@ public class WeChatController {
         }
         //System.out.println(TAG + "：解析用户发送过来的信息结束");
         
+        switch (MsgType.valueOf(map.get("MsgType"))) {
+		case TEXT:
+			
+			break;
+
+		default:
+			break;
+		}
+        
         // 响应消息  
         PrintWriter out = response.getWriter();  
         out.print("");  

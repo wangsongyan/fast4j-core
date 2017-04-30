@@ -27,4 +27,9 @@ public enum MsgType {
 		this.name = name;
 	}
 	
+	public String value(){
+		return type;
+	}
+	
+	
 }
