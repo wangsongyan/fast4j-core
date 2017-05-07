@@ -10,11 +10,10 @@ SSM JavaWeb开发框架常用技术开发包
 6. Quartz Spring支持
 7. Freemarker/Volecity/Beetl 整合模板+数据
 8. 验证码服务
-9. 微信支持
-10. 常用工具包
-
+9. 常用工具包
+10. HibernateValidator
+11. 验证码
+12. excel导入导出
 
 ## 计划加入
-1. HibernateValidator
-2. 验证码
-3. excel导入导出
+1. 微信公众号支持
