@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,8 +28,7 @@ public class Chinese {
 
 	static {
 		try {
-			List<String> lines = FileUtils.readLines(new File(Chinese.class
-					.getResource(DIC_NAME).getFile())/* , "gbk" */);
+			List<String> lines = IOUtils.readLines(Chinese.class.getResourceAsStream(DIC_NAME)/* , "gbk" */);
 			for (String str : lines) {
 				String character = str.substring(0, 1);
 				String sequence = str.substring(1).trim();

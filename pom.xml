@@ -259,6 +259,9 @@
 						<exclude>**/*.properties</exclude>
 						<exclude>**/*.xml</exclude>
 					</excludes>
+					<includes>
+						<include>**/*.txt</include>
+					</includes>
 				</configuration>
 			</plugin>
 			<plugin>
