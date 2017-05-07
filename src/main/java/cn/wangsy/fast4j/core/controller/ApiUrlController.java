@@ -9,7 +9,6 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,12 +26,12 @@ import cn.wangsy.fast4j.util.SetUtils;
  * @author wangsy
  * @date 创建时间：2016年8月5日 下午4:00:04
  */
-@Controller
-@RequestMapping("/test")
-public class PathScanController {
+public abstract class ApiUrlController {
 
 	@Resource
 	private RequestMappingHandlerMapping requestMappingHandlerMapping;
+	
+	public abstract String getApiView();
 	
 	@RequestMapping("api")
 	public String api(Model model){
@@ -64,7 +63,7 @@ public class PathScanController {
         }
         Collections.sort(requestToMethodItemList);
         model.addAttribute("MethodList", requestToMethodItemList);
-		return "/api";
+		return getApiView();
 	}
 	
 	@RequestMapping("/requestmappingdetail.do")
