@@ -46,9 +46,9 @@ public class StrokeComparator implements Comparator<String> {
 			}
 
 			try {
-				Word word1 = Chinese.getInstance().get(
+				Word word1 = Chinese.get(
 						String.valueOf(Character.toChars(codePoint1)));
-				Word word2 = Chinese.getInstance().get(
+				Word word2 = Chinese.get(
 						String.valueOf(Character.toChars(codePoint2)));
 				int stroke1 = word1.getTotal();
 				int stroke2 = word2.getTotal();

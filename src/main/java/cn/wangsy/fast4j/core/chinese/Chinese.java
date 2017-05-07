@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
  * @author wangsy
  * @date 2017年5月4日下午1:23:07
  */
+@SuppressWarnings("unchecked")
 public class Chinese {
 
 	// 字库文件
@@ -24,10 +25,7 @@ public class Chinese {
 	private static Map<String, Word> words = new HashMap<String, Word>();
 	private static Logger logger = LoggerFactory.getLogger(Chinese.class);
 
-	private static Chinese instance = new Chinese();
-
-	@SuppressWarnings("unchecked")
-	private Chinese() {
+	static {
 		try {
 			List<String> lines = FileUtils.readLines(new File(Chinese.class
 					.getResource(DIC_NAME).getFile())/* , "gbk" */);
@@ -41,13 +39,13 @@ public class Chinese {
 			logger.error("load dictionary failed.");
 		}
 	}
-
-	public static Chinese getInstance() {
-		return instance;
+	
+	private Chinese(){
+		
 	}
-
+	
 	// 获取汉字总笔画数
-	public int stroke(String str) throws UnsupportedWordException {
+	public static int stroke(String str) throws UnsupportedWordException {
 		int total = 0;
 		for (int i = 0; i < str.length(); i++) {
 			total += get(String.valueOf(str.charAt(i))).getTotal();
@@ -56,7 +54,7 @@ public class Chinese {
 	}
 
 	// 根据汉字获取Word
-	public Word get(String str) throws UnsupportedWordException {
+	public static Word get(String str) throws UnsupportedWordException {
 		Word word = words.get(str);
 		if (null == word) {
 			throw new UnsupportedWordException("unsupportedword:" + str);

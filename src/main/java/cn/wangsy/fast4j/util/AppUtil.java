@@ -9,6 +9,10 @@ import java.util.UUID;
  */
 public class AppUtil {
 
+	private AppUtil(){
+		
+	}
+	
 	public static String getUUID(){
 		return UUID.randomUUID().toString().replace("-", "");
 	}

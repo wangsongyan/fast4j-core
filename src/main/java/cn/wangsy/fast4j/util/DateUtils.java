@@ -15,6 +15,10 @@ import java.util.Date;
  */
 public class DateUtils {
 
+	private DateUtils(){
+		
+	}
+	
 	/***
 	 * 时间加减运算
 	 * 

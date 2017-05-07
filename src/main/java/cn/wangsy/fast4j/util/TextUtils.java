@@ -14,6 +14,10 @@ import java.util.regex.Pattern;
  */
 public class TextUtils {
 
+	private TextUtils() {
+
+	}
+
 	/**
 	 * 
 	 * 判断字符串是否是数字
@@ -33,9 +37,19 @@ public class TextUtils {
 	 * @param str
 	 * @return
 	 */
-	public static boolean isChinese(String str){
+	public static boolean isChinese(String str) {
 		Pattern pattern = Pattern.compile("[\\u4e00-\\u9fa5]+");
 		return pattern.matcher(str).matches();
 	}
-	
+
+	/**
+	 * 获取字符串中的中文
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static String getChinese(String str) {
+		return str.replaceAll("[^\u4e00-\u9fa5]", "");
+	}
+
 }
