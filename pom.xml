@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.wangsongyan</groupId>
 	<artifactId>fast4j-core</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Fast Web Framework For Java</description>
@@ -265,6 +265,12 @@
 			<version>1.6.1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+		</dependency>
+
 	</dependencies>
 
 	<profiles>
@@ -299,8 +305,8 @@
 						<artifactId>maven-compiler-plugin</artifactId>
 						<version>3.0</version>
 						<configuration>
-							<source>1.6</source>
-							<target>1.6</target>
+							<source>1.7</source>
+							<target>1.7</target>
 						</configuration>
 					</plugin>
 					<plugin>
@@ -334,6 +340,11 @@
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
 						<version>2.9</version>
+						<configuration>
+					      <charset>UTF-8</charset>
+					      <encoding>UTF-8</encoding>
+					      <docencoding>UTF-8</docencoding>
+					   </configuration>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>
