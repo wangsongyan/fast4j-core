@@ -6,6 +6,7 @@ package cn.wangsy.fast4j.core.wechat;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import cn.wangsy.fast4j.core.wechat.message.BaseMessage;
+import cn.wangsy.fast4j.core.wechat.message.TextMessage;
 
 /**
  * @author wangsy
@@ -88,9 +92,18 @@ public class WeChatController {
         }
         //System.out.println(TAG + "：解析用户发送过来的信息结束");
         
-        switch (MsgType.valueOf(map.get("MsgType"))) {
-		case TEXT:
+        BaseMessage baseMessage = null;
+        
+        switch (map.get("MsgType")) {
+		case "text":
 			
+			TextMessage textMessage = new TextMessage();
+			textMessage.setCreateTime(new Date().getTime());
+			textMessage.setFromUserName(map.get("ToUserName"));
+			textMessage.setToUserName(map.get("FromUserName"));
+			textMessage.setMsgType("text");
+			textMessage.setContent("[收到信息]"+map.get("Content"));
+			baseMessage = textMessage;
 			break;
 
 		default:
@@ -99,7 +112,7 @@ public class WeChatController {
         
         // 响应消息  
         PrintWriter out = response.getWriter();  
-        out.print("");  
+        out.print(MessageUtil.textMessageToXml(baseMessage));  
         out.close();  
     }  
 }
