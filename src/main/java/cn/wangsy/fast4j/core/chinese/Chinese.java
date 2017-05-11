@@ -3,13 +3,11 @@
  */
 package cn.wangsy.fast4j.core.chinese;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +20,7 @@ import org.slf4j.LoggerFactory;
 public class Chinese {
 
 	// 字库文件
-	private static final String DIC_NAME = "BiShunKu.txt";
+	private static final String DIC_NAME = "/BiShunKu.txt";
 	private static Map<String, Word> words = new HashMap<String, Word>();
 	private static Logger logger = LoggerFactory.getLogger(Chinese.class);
 
