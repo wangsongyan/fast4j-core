@@ -51,5 +51,15 @@ public class TextUtils {
 	public static String getChinese(String str) {
 		return str.replaceAll("[^\\u4e00-\\u9fa5]", "");
 	}
+	
+	/***
+	 * 删除字符中的数字
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static String deleteNumber(String str){
+		return str.replaceAll("\\d+", "");
+	}
 
 }
