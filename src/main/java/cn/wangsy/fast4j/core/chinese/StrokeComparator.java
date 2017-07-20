@@ -61,7 +61,8 @@ public class StrokeComparator implements Comparator<String> {
 					return word1.getSequence().compareTo(word2.getSequence());
 				}
 			} catch (UnsupportedWordException e) {
-				e.printStackTrace();
+				//e.printStackTrace();
+				return o1.compareTo(o2);
 			}
 		}
 		return o1.length() - o2.length();
