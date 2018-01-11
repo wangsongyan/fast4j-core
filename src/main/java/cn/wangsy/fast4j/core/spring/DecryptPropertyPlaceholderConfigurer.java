@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 
 /**
+ * 继承该类实现decrypt方法
  * @author wangsy
  * @date 2018年1月11日上午9:39:52
  */
